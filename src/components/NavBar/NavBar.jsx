@@ -3,7 +3,7 @@ import { RxCross2 } from "react-icons/rx";
 import { RiMenu2Line } from "react-icons/ri";
 import { useState } from "react";
 const NavBar = () => {
-    const [open, setOpen]= useState(false)
+  const [open, setOpen] = useState(false);
   const routes = [
     {
       id: 1,
@@ -33,21 +33,17 @@ const NavBar = () => {
   ];
 
   return (
-    <div>
-      <div onClick={()=>setOpen(!open)} className="md:hidden text-2xl">
-        {
-open ?   <RxCross2></RxCross2> :  <RiMenu2Line></RiMenu2Line>
-        }
-        
-      
+    <nav className="p-2 text-white font-semibold bg-yellow-800">
+      <div onClick={() => setOpen(!open)} className="md:hidden text-2xl">
+        {open === true ? <RxCross2></RxCross2> : <RiMenu2Line></RiMenu2Line>}
       </div>
 
-      <ul className="md:flex">
+      <ul className={`md:flex bg-yellow-800 rounded-xl p-2 md:static absolute ${open ? 'top-11' : '-top-60'}`}>
         {routes.map((route) => (
           <NavLink key={route.id} route={route}></NavLink>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 };
 
