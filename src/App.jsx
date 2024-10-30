@@ -1,12 +1,13 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
+import PriceOptions from "./components/PriceOptions/PriceOptions";
 
 function App() {
-
   return (
     <>
-    <NavBar></NavBar>
-      <h1 className="text-2xl bg-red-300">Price Options</h1>
+      <NavBar></NavBar>
+
+      <PriceOptions></PriceOptions>
     </>
   );
 }
